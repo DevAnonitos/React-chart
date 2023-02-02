@@ -1,6 +1,9 @@
 import React, { useEffect, Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FiSettings } from "react-icons/fi"; 
+import { FiSettings } from "react-icons/fi";
+
+//=================================== Components=============================
+import { Navbar, Footer, Sidebar, ThemeSettings } from './components';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -9,7 +12,7 @@ import './App.css';
 
 const App = () => {
 
-  const activeMenu = true;
+  const activeMenu = false;
 
   return (
     <>
@@ -41,13 +44,35 @@ const App = () => {
                 className="w-72 fixed sidebar 
                 dark:bg-secondary-dark-bg bg-white"
               >
-                Sidebar
+                <Sidebar />
               </div>
             ): (
               <div className="w-0 dark:bg-secondary-dark-bg">
-                Sidebar w-0
+                <Sidebar />
               </div>
             )}
+            <div
+              className={
+                activeMenu
+                  ? 'dark:bg-main-dark-bg bg-main-bg min-h-screen md:ml-72 w-full '
+                  : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+              }
+            >
+              <div 
+                className="fixed md:static bg-main-bg 
+                dark:bg-main-dark-bg navbar w-full"
+              >
+                <Navbar />
+              </div>
+
+              <div>
+                <Routes>
+
+                </Routes>
+              </div>
+
+              <Footer />
+            </div>
           </div>
         </BrowserRouter>
       </div>
