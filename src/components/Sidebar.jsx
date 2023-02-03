@@ -6,10 +6,12 @@ import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
 import { links } from '../data/dummy.js';
+
+import { useStateContext } from '../contexts/ContextProvider.js';
  
 const Sidebar = () => {
 
-  const activeMenu = true;
+  const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-2xl  text-white  text-md m-2';
   const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-stone-200 m-2 transition-all duration-200 ease-in-out delay-75';
@@ -30,7 +32,7 @@ const Sidebar = () => {
             <div className='flex justify-between items-center'>
               <Link 
                 to="/"
-                onClick={() => {}}
+                onClick={() => setActiveMenu(false)}
                 className='items-center gap-3 ml-2 
                 mt-4 flex text-xl font-extrabold 
                 tracking-tight dark:text-white 
@@ -45,6 +47,7 @@ const Sidebar = () => {
               >
                 <button 
                   type="button"
+                  onClick={() => setActiveMenu(!activeMenu)}
                   className="text-2xl rounded-full p-2 
                   hover:bg-light-gray mt-4 block"
                 >
@@ -68,7 +71,10 @@ const Sidebar = () => {
                       }
                     >
                       {link.icon}
-                      <span className="capitalize text-lg antialiased font-medium text-emerald-500">
+                      <span 
+                        className="capitalize text-lg 
+                        antialiased font-medium text-emerald-500"
+                      >
                         {link.name}
                       </span>
                     </NavLink>

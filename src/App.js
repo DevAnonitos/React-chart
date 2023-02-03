@@ -12,6 +12,8 @@ import 'tippy.js/dist/tippy.css';
 import ClipLoader from "react-spinners/ClipLoader";
 import './App.css';
 
+import { useStateContext } from "./contexts/ContextProvider";
+
 const EcommerceView = lazy(() => delayView(import('./pages/Ecommerce')));
 
 // ==============Delay functions ============================
@@ -23,7 +25,7 @@ function delayView(promise) {
 
 const App = () => {
 
-  const activeMenu = true;
+  const { activeMenu }  = useStateContext();
 
   return (
     <>
