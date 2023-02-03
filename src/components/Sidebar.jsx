@@ -11,6 +11,13 @@ const Sidebar = () => {
 
   const activeMenu = true;
 
+  const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-2xl  text-white  text-md m-2';
+  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-stone-200 m-2 transition-all duration-200 ease-in-out delay-75';
+
+  const handleCloseSidebar = () => {
+
+  };
+
   return (
     <>
       <div 
@@ -39,14 +46,35 @@ const Sidebar = () => {
                 <button 
                   type="button"
                   className="text-2xl rounded-full p-2 
-                  hover:bg-light-gray mt-4 block md:hidden"
+                  hover:bg-light-gray mt-4 block"
                 >
                   <MdOutlineCancel />
                 </button>
               </Tippy>
             </div>
             <div className='mt-10'>
-
+              {links.map((items) => (
+                <div key={items.title}>
+                  <p className='text-gray-600 m-3 mt-4 uppercase'>
+                    {items.title}
+                  </p>
+                  {items.links.map((link) => (
+                    <NavLink
+                      to={`/${link.name}`}
+                      key={link.name}
+                      onClick={handleCloseSidebar}
+                      className={
+                        ({ isActive }) => (isActive ? activeLink : normalLink)
+                      }
+                    >
+                      {link.icon}
+                      <span className="capitalize text-lg antialiased font-medium text-emerald-500">
+                        {link.name}
+                      </span>
+                    </NavLink>
+                  ))}
+                </div>
+              ))}
             </div>
           </> 
         )}
