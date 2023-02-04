@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu } from "react-icons/ai";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -14,7 +14,7 @@ const Sidebar = () => {
   const { activeMenu, setActiveMenu } = useStateContext();
 
   const activeLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-2xl  text-white  text-md m-2';
-  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-stone-200 m-2 transition-all duration-200 ease-in-out delay-75';
+  const normalLink = 'flex items-center gap-5 pl-4 pt-3 pb-2.5 rounded-lg text-md text-gray-700 dark:text-gray-200 dark:hover:text-black hover:bg-stone-100 m-2 transition-all duration-200 ease-in-out delay-75';
 
   const handleCloseSidebar = () => {
 
@@ -49,16 +49,20 @@ const Sidebar = () => {
                   type="button"
                   onClick={() => setActiveMenu(!activeMenu)}
                   className="text-2xl rounded-full p-2 
-                  hover:bg-light-gray mt-4 block"
+                  hover:bg-light-gray mt-4 block 
+                  text-sky-700 antialiased font-extrabold"
                 >
-                  <AiOutlineClose />
+                  < AiOutlineMenu />
                 </button>
               </Tippy>
             </div>
             <div className='mt-10'>
               {links.map((items) => (
                 <div key={items.title}>
-                  <p className='text-gray-600 m-3 mt-4 uppercase'>
+                  <p 
+                    className='text-gray-600 m-3 mt-4 pt-2
+                    uppercase border-t border-cyan-600'
+                  >
                     {items.title}
                   </p>
                   {items.links.map((link) => (
