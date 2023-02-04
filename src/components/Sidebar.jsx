@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from "react-router-dom";
 import { SiShopware } from "react-icons/si";
-import { MdOutlineCancel } from "react-icons/md";
+import { AiOutlineClose } from "react-icons/ai";
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 
@@ -51,7 +51,7 @@ const Sidebar = () => {
                   className="text-2xl rounded-full p-2 
                   hover:bg-light-gray mt-4 block"
                 >
-                  <MdOutlineCancel />
+                  <AiOutlineClose />
                 </button>
               </Tippy>
             </div>
@@ -70,7 +70,9 @@ const Sidebar = () => {
                         ({ isActive }) => (isActive ? activeLink : normalLink)
                       }
                     >
-                      {link.icon}
+                      <div className='text-yellow-600'>
+                        {link.icon} 
+                      </div>
                       <span 
                         className="capitalize text-lg 
                         antialiased font-medium text-emerald-500"
