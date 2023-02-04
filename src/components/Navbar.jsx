@@ -25,14 +25,13 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
           type='button'
           onClick={customFunc}
           style={{ color }}
-          className='relative text-xl rounded-full p-3 hover:bg-light-gray'
+          className='relative text-xl rounded-full p-4 hover:bg-light-gray'
         >
           <span
             style={{ background: dotColor}}
-            className='absolute inline-flex rounded-full h-2 w-2 right-2 top-2'
-          >
-            {icon}
-          </span>
+            className='absolute inline-flex rounded-full h-3 w-3 right-3 top-3'
+          />
+          {icon}
         </button>
       </Tippy>
     </>
@@ -70,16 +69,18 @@ const Navbar = () => {
     }
   }, [screenSize]);
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <>
-      <div className="flex justify-between p-2 md:mx-6 relative">
+      <div className="flex justify-between mx-2 p-2 md:mx-6 relative">
         <NavButton 
           title="Menu"
           customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
           color="blue"
           icon={<AiOutlineMenu />}
         />
-        <div className='flex'>
+        <div className='flex items-center'>
           <NavButton 
             title="Cart"
             customFunc={() => handleClick('cart')}
@@ -117,7 +118,7 @@ const Navbar = () => {
               <p>
                 <span className="text-gray-400 text-14">Hi,</span>{' '}
                 <span className="text-gray-400 font-bold ml-1 text-14">
-                  Michael
+                  BaoNg
                 </span>
               </p>
               <MdKeyboardArrowDown className="text-gray-400 text-14" />

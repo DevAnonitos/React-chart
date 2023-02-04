@@ -64,8 +64,7 @@ const App = () => {
             ): (
               <div 
                 className="w-0 dark:bg-secondary-dark-bg 
-                transition-all duration-200 ease-in-out 
-                delay-75"
+                "
               >
                 <Sidebar />
               </div>
@@ -99,7 +98,7 @@ const App = () => {
                   }
                 >
                   <Routes>
-                      {/* dashboard  */}
+                    {/* dashboard  */}
                     <Route path="/" element={(<EcommerceView />)} />
                     <Route path="/ecommerce" element={(<EcommerceView />)} />
 
