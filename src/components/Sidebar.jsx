@@ -43,7 +43,7 @@ const Sidebar = () => {
               </Link>
               <Tippy
                 content="Menu"
-                placement='right'
+                placement='bottom'
               >
                 <button 
                   type="button"

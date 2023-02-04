@@ -55,12 +55,18 @@ const App = () => {
             {activeMenu ? (
               <div 
                 className="w-72 fixed sidebar
-                dark:bg-secondary-dark-bg bg-white"
-              >
+                dark:bg-secondary-dark-bg bg-white 
+                transition-all duration-200 ease-in-out 
+                delay-75 scroll-smooth scroll-m-1"
+              >        
                 <Sidebar />
               </div>
             ): (
-              <div className="w-0 dark:bg-secondary-dark-bg">
+              <div 
+                className="w-0 dark:bg-secondary-dark-bg 
+                transition-all duration-200 ease-in-out 
+                delay-75"
+              >
                 <Sidebar />
               </div>
             )}
