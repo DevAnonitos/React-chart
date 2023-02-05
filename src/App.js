@@ -33,18 +33,18 @@ const App = () => {
         <BrowserRouter>
           <div className="flex relative dark:bg-main-dark-bg">
             <div className="fixed right-4 bottom-4" style={{ zIndex: '1000'}}>
-              <Tippy 
-                content="Settings" 
+              <Tippy
+                content="Settings"
                 zIndex={"50"}
               >
                 <button
                   type="button"
-                  style={{ 
-                    background: 'gray', 
-                    borderRadius: '50%' 
+                  style={{
+                    background: 'gray',
+                    borderRadius: '50%'
                   }}
-                  className="text-3xl text-white p-3 
-                  hover:drop-shadow-xl 
+                  className="text-3xl text-white p-3
+                  hover:drop-shadow-xl
                   hover:bg-light-gray"
                 >
                   <FiSettings />
@@ -53,17 +53,17 @@ const App = () => {
             </div>
             {/* ================Active Menu=============================== */}
             {activeMenu ? (
-              <div 
+              <div
                 className="w-72 fixed sidebar
-                dark:bg-secondary-dark-bg bg-white 
-                transition-all duration-200 ease-in-out 
+                dark:bg-secondary-dark-bg bg-white
+                transition-all duration-200 ease-in-out
                 delay-75 scroll-smooth scroll-m-1"
-              >        
+              >
                 <Sidebar />
               </div>
             ): (
-              <div 
-                className="w-0 dark:bg-secondary-dark-bg 
+              <div
+                className="w-0 dark:bg-secondary-dark-bg
                 "
               >
                 <Sidebar />
@@ -76,17 +76,16 @@ const App = () => {
                   : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
               }
             >
-              <div 
-                className="fixed md:static bg-main-bg 
-                dark:bg-main-dark-bg navbar w-full"
+              <div
+                className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full"
               >
                 <Navbar />
               </div>
 
               <div>
-                <Suspense 
+                <Suspense
                   fallback={
-                    <div className="flex justify-center items-center">   
+                    <div className="flex justify-center items-center">
                       <ClipLoader
                         title="Loading..."
                         color="blue"

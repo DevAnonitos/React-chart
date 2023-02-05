@@ -25,11 +25,11 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => {
           type='button'
           onClick={customFunc}
           style={{ color }}
-          className='relative text-xl rounded-full p-4 hover:bg-light-gray'
+          className='relative text-xl rounded-full p-2 hover:bg-light-gray'
         >
           <span
             style={{ background: dotColor}}
-            className='absolute inline-flex rounded-full h-3 w-3 right-3 top-3'
+            className='absolute inline-flex rounded-full h-2 w-2 right-2 top-1'
           />
           {icon}
         </button>
@@ -73,7 +73,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between mx-2 p-2 md:mx-6 relative">
+      <div 
+        className="flex items-center 
+        justify-between mx-2 py-4 md:mx-6 relative"
+      >
         <NavButton 
           title="Menu"
           customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
