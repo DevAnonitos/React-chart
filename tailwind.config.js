@@ -41,7 +41,7 @@ module.exports = {
       },
       backgroundImage: {
         'hero-pattern':
-          "url('https://lh5.googleusercontent.com/proxy/Z8pU-YrYVTPlejIOh_3NAnAH9eBJ1AxUB8yX0fQzv7nbDMJQwjQ5Rxn0cS3WhkGPxSIQr1MbCi_tzzpmwZtu6Ye_9X2iF64RVBO5lVsqvBkoD3H87GxdhVKw1R4C11WphHkCJFSgCwd2sqnwVEaHzung3v30Y6UNV4I4U0FzyOftKf70d0KSrEtGwhG_gP7GN7M=w1200-h630-p-k-no-nu')",
+          "url('https://geekbot.com/blog/wp-content/uploads/2019/06/shutterstock_1329068555-B-EDITED-1024x678.png')",
       },
     },
   },
