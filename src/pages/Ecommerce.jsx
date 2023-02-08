@@ -52,12 +52,52 @@ const Ecommerce = () => {
             <div className='mt-6'>
               <Button
                 color="white"
-                bgColor="blue"
+                bgColor="#74b9ff"
                 text="Download"
-                borderRadius="10px"
+                borderRadius="25px"
+                size="md"
               />
             </div>
           </div>
+
+          <div
+            className='flex m-3 flex-wrap
+            justify-center gap-1 items-center'
+          >
+            {earningData.map((item) => (
+                <div
+                  key={item.title}
+                  className='bg-white h-44 w-full dark:text-gray-200
+                  dark:bg-secondary-dark-bg md:w-56
+                  p-4 pt-9 my-2 ml-2 rounded-2xl shadow-md'
+                >
+                  <button
+                    type='button'
+                    style={{color: item.iconColor, backgroundColor: item.iconBg}}
+                    className='text-2xl opacity-0.9 rounded-full
+                    p-4 hover:drop-shadow-xl'
+                  >
+                    {item.icon}
+                  </button>
+                  <p className='mt-3'>
+                    <span className='text-lg font-semibold'>
+                      {item.title}
+                    </span>
+                    <span className={`text-sm text-${item.pcColor} ml-2`}>
+                      {item.percentage}
+                    </span>
+                  </p>
+                  <p className="text-sm text-gray-400  mt-1">
+                    {item.title}
+                  </p>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div>
+
         </div>
       </div>
     </>
