@@ -157,7 +157,7 @@ const Ecommerce = () => {
                   </p>
                 </div>
 
-                <div className='mt-5'>
+                <div className='mt-5 bg-black'>
                   <SparkLine
                     currentColor="blue"
                     id="line-sparkline"
